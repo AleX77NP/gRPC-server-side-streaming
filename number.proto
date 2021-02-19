@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package protobuf;
+
+option go_package = ".;protos";
+
+service StreamService {
+    rpc ConvertNumber (Request) returns (stream Response);
+}
+
+message Request {
+    int32 num = 1;
+}
+
+message Response {
+    string textNum = 1;
+}
